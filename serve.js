@@ -46,7 +46,7 @@ function main() {
     });
 
     app.get('/', function(req, res) {
-        res.send(200, 'Please pass Blogger name as a parameter. Ie. /myblog.');
+        res.send(200, 'Please pass Blogger name as a parameter. Ie. /myblog. Once you are done, save the JSON and pass it to Ghost via `ghost/debug` at your new blog.');
     });
 
     process.on('exit', terminator);
