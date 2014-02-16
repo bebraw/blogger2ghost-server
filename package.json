@@ -25,7 +25,7 @@
     "url": "https://raw.github.com/bebraw/blogger2ghost-server/master/LICENSE"
   },
   "dependencies": {
-    "blogger2ghost": "~0.1.4",
+    "blogger2ghost": "~0.1.6",
     "express": "~3.4.8",
     "request": "~2.33.0",
     "annois": "~0.3.0"
