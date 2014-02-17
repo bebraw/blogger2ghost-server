@@ -39,10 +39,6 @@ footer {
     background: rgba(20,20,20,0.6);
 }
 
-footer .acknowledgments {
-    float: right;
-}
-
 /*
  * -- SPLASH STYLES --
  * This is the blue top section that appears on the page.
@@ -101,6 +97,15 @@ footer .acknowledgments {
     .splash-head {
         font-size: 250%;
     }
+
+    footer div {
+        float: right;
+    }
+
+    footer .bg {
+        margin-left: 1em;
+        margin-right: 0.5em;
+    }
 }
 
 /*
@@ -118,5 +123,9 @@ footer .acknowledgments {
 @media (max-width: 48em) {
     .instructions {
         width: 20em;
+    }
+
+    footer {
+        height: 4em;
     }
 }
