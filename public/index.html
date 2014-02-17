@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="A layout example that shows off a responsive product landing page.">
+
+    <title>Blogger to Ghost</title>
+
+<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.4.2/pure.css">
+
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" href="css/main-grid-old-ie.css">
+    <![endif]-->
+    <!--[if gt IE 8]><!-->
+        <link rel="stylesheet" href="css/main-grid.css">
+    <!--<![endif]-->
+
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" href="css/layouts/marketing-old-ie.css">
+    <![endif]-->
+    <!--[if gt IE 8]><!-->
+        <link rel="stylesheet" href="css/layouts/marketing.css">
+    <!--<![endif]-->
+
+<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+</head>
+<body>
+    <article class="splash-container">
+        <div class="splash">
+            <h1 class="splash-head">Blogger to Ghost</h1>
+
+            <p class="splash-subhead">Tired of Blogger? Follow the steps below to get up and running on Ghost!</p>
+
+            <ol class="instructions">
+                <li><a href="https://ghost.org/">Set up a Ghost blog</a></li>
+                <li>
+                    <form id="form" class="pure-form" action="." method="POST">
+                        <fieldset>
+                            <input name="blog" type="text" placeholder="Provide your blog url" />
+
+                            <button type="submit" class="pure-button">Get Ghost JSON</button>
+                        </fieldset>
+                    </form>
+                </li>
+                <li>Surf to <code>ghost/debug</code> at your Ghost blog</li>
+                <li>Import JSON to your blog there</li>
+                <li>Tweak content till you are happy with it. <a href="https://github.com/bebraw/blogger2ghost/issues">Report possible bigger issues to me.</a></li>
+            </ol>
+        </div>
+    </article>
+    <footer><div class="acknowledgments">Background: <a href="http://www.flickr.com/photos/10832246@N06/2925254789/">Markus Mayer (CC BY-NC-ND)</a> Implementation: <a href="https://www.github.com/bebraw">Juho Vepsäläinen</a></div></footer>
+</body>
+</html>
