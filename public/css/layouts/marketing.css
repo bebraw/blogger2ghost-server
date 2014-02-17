@@ -79,7 +79,6 @@ footer {
 .instructions {
     margin-left: auto;
     margin-right: auto;
-    width: 40em;
 }
 
 .splash-subhead, .instructions, a {
@@ -110,6 +109,10 @@ footer {
         margin-left: 1em;
         margin-right: 0.5em;
     }
+
+    .instructions {
+        width: 30em;
+    }
 }
 
 /*
@@ -122,13 +125,13 @@ footer {
     .splash-head {
         font-size: 300%;
     }
+
+    .instructions {
+        width: 40em;
+    }
 }
 
 @media (max-width: 48em) {
-    .instructions {
-        width: 20em;
-    }
-
     footer {
         height: 4em;
     }
