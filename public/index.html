@@ -25,7 +25,7 @@
 
 <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
 </head>
-<body>
+<body onload="init();">
     <article class="splash-container">
         <div class="splash">
             <h1 class="splash-head">Blogger to Ghost</h1>
@@ -37,7 +37,7 @@
                 <li>
                     <form id="form" class="pure-form" action="." method="POST">
                         <fieldset>
-                            <input name="blog" type="text" placeholder="Provide your blog url" />
+                            <input id="blogUrl" name="blog" type="text" placeholder="Provide your blog url" />
 
                             <button type="submit" class="pure-button">Get Ghost JSON</button>
                         </fieldset>
@@ -53,5 +53,14 @@
         <div class="bg">Background: <a href="http://www.flickr.com/photos/10832246@N06/2925254789/">Markus Mayer (CC BY-NC-ND)</a></div>
         <div class="author">Implementation: <a href="https://www.github.com/bebraw">Juho Vepsäläinen</a></div>
     </footer>
+    <script type="text/javascript">
+    function init() {
+        var blog = document.getElementById('blogUrl');
+
+        if(document.location.search === '?error') {
+            blog.classList.add('error');
+        }
+    }
+    </script>
 </body>
 </html>

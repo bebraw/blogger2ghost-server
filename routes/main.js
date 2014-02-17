@@ -11,13 +11,13 @@ module.exports = {
     },
     post: function(req, res) {
         if(!req.body) {
-            return res.send(404, 'Missing request body!');
+            return res.redirect('/?error');
         }
 
         var blog = req.body.blog;
 
         if(!blog) {
-            return res.send(404, 'Blog parameter not provided!');
+            return res.redirect('/?error');
         }
 
         request.get({
@@ -27,11 +27,11 @@ module.exports = {
             var result;
 
             if(err) {
-                return res.send(404, err);
+                return res.redirect('/?error');
             }
 
             if(is.string(data)) {
-                return res.send(404, 'Failed to fetch data. Check blog name!');
+                return res.redirect('/?error');
             }
 
             try {
@@ -39,7 +39,7 @@ module.exports = {
             }
             catch(e) {
                 console.log('Failed to convert', blog);
-                return res.send(404, 'Conversion failed');
+                return res.redirect('/?error');
             }
 
             res.setHeader('Content-Disposition', 'attachment; filename=ghost_data.json');

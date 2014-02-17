@@ -39,6 +39,10 @@ footer {
     background: rgba(20,20,20,0.6);
 }
 
+.error {
+    background-color: rgb(255, 252, 179);
+}
+
 /*
  * -- SPLASH STYLES --
  * This is the blue top section that appears on the page.
