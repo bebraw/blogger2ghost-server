@@ -29,8 +29,7 @@
     "blogger2ghost": "0.2.0",
     "express": "3.4.8",
     "request": "2.33.0",
-    "annois": "0.3.0",
-    "connect-multiparty": "1.0.3"
+    "annois": "0.3.0"
   },
   "devDependencies": {
     "require-dir": "0.1.0",
