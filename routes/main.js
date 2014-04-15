@@ -1,3 +1,5 @@
+'use strict';
+
 var blogger2ghost = require('blogger2ghost');
 var is = require('annois');
 var request = require('request');

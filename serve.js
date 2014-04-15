@@ -2,8 +2,7 @@
 
 'use strict';
 
-var path = require('path');
-
+var connect = require('connect');
 var express = require('express');
 
 var routes = require('./routes');
@@ -17,23 +16,15 @@ function main() {
     var port = process.env.PORT || 3000;
     var halfDay = 43200000;
 
-    app.configure(function() {
-        app.set('port', port);
-
-        app.use(express.logger('dev'));
-
-        app.use(express.urlencoded());
-
-        app.use(express['static'](path.join(__dirname, 'public'), {
-            maxAge: halfDay
-        }));
-
-        app.use(app.router);
+    app.use(express['static'](__dirname + '/public'), {
+        maxAge: halfDay
     });
+    app.use(connect.urlencoded());
 
-    app.configure('development', function() {
-        app.use(express.errorHandler());
-    });
+    var env = process.env.NODE_ENV || 'development';
+    if(env === 'development') {
+        app.use(connect.errorHandler());
+    }
 
     app.get('/', routes.main.get);
     app.post('/', routes.main.post);
