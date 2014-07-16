@@ -1,9 +1,13 @@
 #!/usr/bin/env node
-
 'use strict';
+
+require('log-timestamp');
 
 var connect = require('connect');
 var express = require('express');
+var serveStatic = require('serve-static')
+var bodyParser = require('body-parser')
+var errorHandler = require('errorhandler');
 
 var routes = require('./routes');
 
@@ -16,14 +20,14 @@ function main() {
     var port = process.env.PORT || 3000;
     var halfDay = 43200000;
 
-    app.use(express['static'](__dirname + '/public'), {
+    app.use(serveStatic(__dirname + '/public', {
         maxAge: halfDay
-    });
-    app.use(connect.urlencoded());
+    }));
+    app.use(bodyParser.urlencoded({extended: true}));
 
     var env = process.env.NODE_ENV || 'development';
     if(env === 'development') {
-        app.use(connect.errorHandler());
+        app.use(errorHandler());
     }
 
     app.get('/', routes.main.get);
@@ -38,7 +42,7 @@ function main() {
     });
 
     app.listen(port, function() {
-        console.log('%s: Node (version: %s) %s started on %d ...', Date(Date.now() ), process.version, process.argv[1], port);
+        console.log('Node (version: %s) %s started on %d ...', process.version, process.argv[1], port);
     });
 }
 
