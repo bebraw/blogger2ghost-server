@@ -2,7 +2,7 @@
 
 var blogger2ghost = require('blogger2ghost');
 var is = require('annois');
-var request = require('request');
+var request = require('superagent');
 
 var getBlogUrl = require('../lib/get_blog_url');
 
@@ -22,32 +22,33 @@ module.exports = {
             return res.redirect('/?error');
         }
 
-        request.get({
-            url: getBlogUrl(blog),
-            json: true
-        }, function(err, _, data) {
-            var result;
+        request.get(getBlogUrl(blog)).
+            set('Accept', 'application/json').
+            end(function(err, data) {
+                var result;
 
-            if(err) {
-                return res.redirect('/?error');
-            }
+                data = data.body;
 
-            if(is.string(data)) {
-                return res.redirect('/?error');
-            }
+                if(err) {
+                    return res.redirect('/?error');
+                }
 
-            try {
-                result = blogger2ghost(data);
-            }
-            catch(e) {
-                console.log('Failed to convert', blog);
-                return res.redirect('/?error');
-            }
+                if(is.string(data)) {
+                    return res.redirect('/?error');
+                }
 
-            res.setHeader('Content-Disposition', 'attachment; filename=ghost_data.json');
-            res.setHeader('Content-Type', 'application/json; charset=utf-8');
+                try {
+                    result = blogger2ghost(data);
+                }
+                catch(e) {
+                    console.log('Failed to convert', blog);
+                    return res.redirect('/?error');
+                }
 
-            res.send(result);
-        });
+                res.setHeader('Content-Disposition', 'attachment; filename=ghost_data.json');
+                res.setHeader('Content-Type', 'application/json; charset=utf-8');
+
+                res.send(result);
+            });
     }
 };
