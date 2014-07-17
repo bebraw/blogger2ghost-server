@@ -9,6 +9,7 @@ var serveStatic = require('serve-static')
 var bodyParser = require('body-parser')
 var errorHandler = require('errorhandler');
 
+var config = require('./config');
 var routes = require('./routes');
 
 
@@ -17,7 +18,7 @@ main();
 function main() {
     var app = express();
 
-    var port = process.env.PORT || 3000;
+    var port = config.port;
     var halfDay = 43200000;
 
     app.use(serveStatic(__dirname + '/public', {
