@@ -18,6 +18,7 @@ main();
 function main() {
     var app = express();
 
+    var ip = config.ip;
     var port = config.port;
     var halfDay = 43200000;
 
@@ -42,8 +43,8 @@ function main() {
         process.on(element, function() { terminator(element); });
     });
 
-    app.listen(port, function() {
-        console.log('Node (version: %s) %s started on %d ...', process.version, process.argv[1], port);
+    app.listen(port, ip, function() {
+        console.log('Node (version: %s) %s started on %s:%d ...', process.version, process.argv[1], ip, port);
     });
 }
 

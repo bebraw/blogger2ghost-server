@@ -12,10 +12,7 @@ catch(e) {}
 
 var conf = parseEnv(process.env, configTemplate, config);
 
-var openshiftPort = process.env.OPENSHIFT_NODEJS_PORT;
-
-if(openshiftPort) {
-    conf.port = openshiftPort;
-}
+conf.port = process.env.OPENSHIFT_NODEJS_PORT || conf.port;
+conf.ip = process.env.OPENSHIFT_NODEJS_IP || conf.ip;
 
 module.exports = conf;
