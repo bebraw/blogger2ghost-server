@@ -30,7 +30,6 @@
     "annois": "0.3.0",
     "blogger2ghost": "0.4.1",
     "body-parser": "1.4.3",
-    "connect": "3.0.2",
     "errorhandler": "1.1.1",
     "express": "4.6.1",
     "log-timestamp": "0.1.1",

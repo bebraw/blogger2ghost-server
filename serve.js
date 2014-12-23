@@ -3,10 +3,9 @@
 
 require('log-timestamp');
 
-var connect = require('connect');
 var express = require('express');
-var serveStatic = require('serve-static')
-var bodyParser = require('body-parser')
+var serveStatic = require('serve-static');
+var bodyParser = require('body-parser');
 var errorHandler = require('errorhandler');
 
 var config = require('./config');
