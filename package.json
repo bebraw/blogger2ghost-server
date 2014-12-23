@@ -8,6 +8,7 @@
     "npm": "1.3.x"
   },
   "scripts": {
+    "start": "node serve.js",
     "run": "node serve.js",
     "test": "node tests"
   },
