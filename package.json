@@ -28,18 +28,18 @@
     "url": "https://raw.github.com/bebraw/blogger2ghost-server/master/LICENSE"
   },
   "dependencies": {
-    "annois": "0.3.0",
-    "blogger2ghost": "0.8.0",
-    "body-parser": "1.4.3",
-    "errorhandler": "1.1.1",
-    "express": "4.6.1",
-    "log-timestamp": "0.1.1",
-    "parse-env": "^0.3.0",
-    "require-dir": "0.1.0",
-    "serve-static": "1.3.2",
-    "superagent": "^0.18.2"
+    "annois": "^0.3.2",
+    "blogger2ghost": "^0.8.2",
+    "body-parser": "^1.12.3",
+    "errorhandler": "^1.3.5",
+    "express": "^4.12.3",
+    "log-timestamp": "^0.1.2",
+    "parse-env": "^0.5.0",
+    "require-dir": "^0.3.0",
+    "serve-static": "^1.9.2",
+    "superagent": "^1.2.0"
   },
   "devDependencies": {
-    "suite.js": "0.6.1"
+    "suite.js": "^0.6.1"
   }
 }
